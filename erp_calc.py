@@ -16,7 +16,7 @@ def calc_mean_erp(data, pts):
     # Initialize ERP array
     erp = np.zeros((epoch_size, pts.shape[0]))
     # Calculate ERPs for each event
-    print('Calculating ERPs...')
+    # print('Calculating ERPs...')
     for k in range(pts.shape[0]):
         erp[:,k] = data[pts[k, 0] - preonset:pts[k, 0] + postonset +1].reshape(-1)
     
@@ -29,13 +29,14 @@ def calc_mean_erp(data, pts):
         erp_mean[:,n] = np.mean(erp[:, inds], axis=1)
     
     # Plot un-smoothed ERP for movement types 1 and 3 (example)
-    plt.figure()
-    plt.plot(tvec, erp_mean[:, [0, 4]])  # example: channel 6, movement types 1 and 3
-    # plt.axis([-200, 1000, -15, 15])
-    plt.title("ERP for Movement Types 1 and 3 (Channel 6)")
-    plt.xlabel('Time (ms)')
-    plt.ylabel('Amplitude (uV)')
-    plt.show()
+    # plt.figure()
+    # plt.plot(tvec, erp_mean[:, [0, 4]])  # example: channel 6, movement types 1 and 3
+    # # plt.axis([-200, 1000, -15, 15])
+    # plt.title("ERP for Movement Types 1 and 3 (Channel 6)")
+    # plt.xlabel('Time (ms)')
+    # plt.ylabel('Amplitude (uV)')
+    # plt.show()
+    # plt.close()
 
     return erp_mean
 
