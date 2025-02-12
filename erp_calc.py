@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import scipy.io
 import pandas as pd
 import math
+from erp_calc import *
 
 def calc_mean_erp(data, pts):
     pts = pts.astype(int)
