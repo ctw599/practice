@@ -51,7 +51,7 @@ ecog_data = ecog_data.to_numpy()
 data_df = pd.read_csv(r'C:\Users\user\OneDrive - Bar-Ilan University - Students\Documents\advanced_programming_course\time_series\mini_project_2_data\events_file_ordered.csv', header=None)  # No header, assuming raw EEG data
 event_points = data_df.to_numpy()  # Convert to NumPy array
 # Call the function
-erp_mean = calc_mean_erp(ecog_data, event_points)
+erp_mean = calc_mean_erp(event_points, ecog_data)
 # mean_of_mean = np.mean(erp_mean, axis=1)
 # def row_average(row):
 #     return row.mean()
