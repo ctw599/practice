@@ -5,7 +5,7 @@ import pandas as pd
 import math
 import importlib
 
-def calc_mean_erp(data, pts):
+def calc_mean_erp(pts, data):
     pts = pts.astype(int)
     # time before event in ms
     preonset = 200  
