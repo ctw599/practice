@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import scipy.io
 import pandas as pd
 import math
-from erp_calc import *
+import importlib
 
 def calc_mean_erp(data, pts):
     pts = pts.astype(int)
@@ -30,14 +30,14 @@ def calc_mean_erp(data, pts):
         erp_mean[:,n] = np.mean(erp[:, inds], axis=1)
     
     # Plot un-smoothed ERP for movement types 1 and 3 (example)
-    # plt.figure()
-    # plt.plot(tvec, erp_mean[:, [0, 4]])  # example: channel 6, movement types 1 and 3
-    # # plt.axis([-200, 1000, -15, 15])
-    # plt.title("ERP for Movement Types 1 and 3 (Channel 6)")
-    # plt.xlabel('Time (ms)')
-    # plt.ylabel('Amplitude (uV)')
-    # plt.show()
-    # plt.close()
+    plt.figure()
+    plt.plot(tvec, erp_mean[:, [0, 4]])  # example: channel 6, movement types 1 and 3
+    # plt.axis([-200, 1000, -15, 15])
+    plt.title("ERP for Movement Types 1 and 3 (Channel 6)")
+    plt.xlabel('Time (ms)')
+    plt.ylabel('Amplitude (uV)')
+    plt.show()
+    plt.close()
 
     return erp_mean
 
